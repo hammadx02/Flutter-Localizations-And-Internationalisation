@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: Consumer<LanguageChangeController>(
-        builder: (context, provder, child) {
+        builder: (context, provider, child) {
           return MaterialApp(
             title: 'Flutter Localizations & Internationalisation',
             debugShowCheckedModeBanner: false,
-            locale: const Locale('es'),
+            locale: provider.appLocale,
             localizationsDelegates: const [
               AppLocalizations.delegate,
               GlobalCupertinoLocalizations.delegate,
