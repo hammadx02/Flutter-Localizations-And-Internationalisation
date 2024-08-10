@@ -35,15 +35,26 @@ class _HomeScreenState extends State<HomeScreen> {
                     <PopupMenuEntry<Languange>>[
                   const PopupMenuItem(
                     value: Languange.english,
-                    child: Text('English'),
+                    child: Text('English 🇺🇸'),
                   ),
                   const PopupMenuItem(
                     value: Languange.spanish,
-                    child: Text('Spanish'),
+                    child: Text('Spanish 🇪🇸'),
                   ),
                 ],
               );
             },
+          ),
+        ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Text(
+              AppLocalizations.of(context)!.email,
+            ),
           ),
         ],
       ),

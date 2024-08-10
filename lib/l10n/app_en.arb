@@ -1,9 +1,9 @@
 {
-  "helloWorld": "Hello World!",
+  "helloWorld": "Hello World! 👋",
   "@helloWorld": {
     "description": "The conventional newborn programmer greeting"
   },
-   "email": "Email",
+   "email": "Email 📧",
       "password": "Password" ,
        "login": "Login"
 }
