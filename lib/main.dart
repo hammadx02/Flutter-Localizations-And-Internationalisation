@@ -4,13 +4,21 @@ import 'package:flutter_localizations_and_internationalisation/home_screen.dart'
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences sp = await SharedPreferences.getInstance();
+  final String languageCode = sp.getString('language_code') ?? '';
+
+  runApp(MyApp(
+    locale: languageCode,
+  ));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  final String locale;
+  const MyApp({super.key, required this.locale});
 
   // This widget is the root of your application.
   @override
