@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Localizations & Internationalisation',
+      debugShowCheckedModeBanner: false,
       locale: const Locale('en'),
       localizationsDelegates: const [
         AppLocalizations.delegate,
