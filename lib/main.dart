@@ -16,12 +16,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Localizations & Internationalisation',
       debugShowCheckedModeBanner: false,
-      locale: const Locale('en'),
+      locale: const Locale('es'),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('es'),
       ],
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
