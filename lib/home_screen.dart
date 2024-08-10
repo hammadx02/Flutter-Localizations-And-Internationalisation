@@ -24,6 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
           Consumer<LanguageChangeController>(
             builder: (context, provider, child) {
               return PopupMenuButton(
+                onSelected: (Languange item) {
+                  if (Languange.english.name == item.name) {
+                    provider.changeLanguage(const Locale('en'));
+                  } else {
+                    provider.changeLanguage(const Locale('es'));
+                  }
+                },
                 itemBuilder: (BuildContext context) =>
                     <PopupMenuEntry<Languange>>[
                   const PopupMenuItem(
