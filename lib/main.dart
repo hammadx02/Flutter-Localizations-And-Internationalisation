@@ -21,25 +21,29 @@ class MyApp extends StatelessWidget {
           create: (_) => LanguageChangeController(),
         ),
       ],
-      child: MaterialApp(
-        title: 'Flutter Localizations & Internationalisation',
-        debugShowCheckedModeBanner: false,
-        locale: const Locale('es'),
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('en'),
-          Locale('es'),
-        ],
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const HomeScreen(),
+      child: Consumer<LanguageChangeController>(
+        builder: (context, provder, child) {
+          return MaterialApp(
+            title: 'Flutter Localizations & Internationalisation',
+            debugShowCheckedModeBanner: false,
+            locale: const Locale('es'),
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('en'),
+              Locale('es'),
+            ],
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            home: const HomeScreen(),
+          );
+        },
       ),
     );
   }
